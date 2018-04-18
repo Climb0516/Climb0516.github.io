@@ -81,10 +81,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="first-Blog-Mac下基于Hexo和Github建自己的博客站"><a href="#first-Blog-Mac下基于Hexo和Github建自己的博客站" class="headerlink" title="first Blog - Mac下基于Hexo和Github建自己的博客站"></a>first Blog - Mac下基于Hexo和Github建自己的博客站</h1><p>2018-04-18 14:10:14</p>
-<p>###建站初衷<br>之前一直在网易博客记录些自己在工作当中遇到的技术呀，写写经验分享，还有些个人生活感悟，虽然一直知道是个半吊子开发，但能一点点记录自己的成长 回头看时发现还有些积累时 那种感觉还挺好～<br>问题是 我在网易博客发现，有几篇花费心血写的博客 发表之后发现看不了，被禁了，里面也没有什么违规的内容呀，让我一度郁闷，最不能容忍的是，好几个月没看博客了 今天我打开一看 发现我发的80篇博客 现在不知道什么原因就剩下60篇了，当时心里一阵mmp飞过。。 于是开始找资料建立自己的博客网站。</p>
-<p>###准备工作<br>在网上找了很多资料，基本都是说workpress建立的，这还需要申请域名，服务器等，主要还主要是对linus和windows系统的，这对我们用mac的就比较尴尬了，然后加上前缀 重点搜mac建站资料，于是就发现mac上可以利用Hexo+Github来搭建自己的博客站，<a href="https://blog.csdn.net/liu_wentao/article/details/70174508" target="_blank" rel="noopener">参看文章</a><br><img src="./1524034594044.png" alt="Alt text"></p>
-<p>###步骤<br><strong>1.   Node.js环境安装</strong><br><a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js 官网地址</a><br>下载node.js 有多种方法：使用brew下载 或 直接下载安装包。 我这里是直接下载安装包的。<br><img src="./1524036063215.png" alt="Alt text"><br>这种就安装成功了。<br>检测安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ClimbdeMacBook-Pro:博客 climbwang$ node -v</span><br><span class="line">v8.11.1</span><br><span class="line">ClimbdeMacBook-Pro:博客 climbwang$ npm -v</span><br><span class="line">5.6.0</span><br></pre></td></tr></table></figure></p>
+        <hr>
+<h2 id="first-Blog-Mac下基于Hexo和Github建自己的博客站"><a href="#first-Blog-Mac下基于Hexo和Github建自己的博客站" class="headerlink" title="first Blog - Mac下基于Hexo和Github建自己的博客站"></a>first Blog - Mac下基于Hexo和Github建自己的博客站</h2><h3 id="建站初衷"><a href="#建站初衷" class="headerlink" title="建站初衷"></a>建站初衷</h3><p>之前一直在网易博客记录些自己在工作当中遇到的技术呀，写写经验分享，还有些个人生活感悟，虽然一直知道是个半吊子开发，但能一点点记录自己的成长 回头看时发现还有些积累时 那种感觉还挺好～<br>问题是 我在网易博客发现，有几篇花费心血写的博客 发表之后发现看不了，被禁了，里面也没有什么违规的内容呀，让我一度郁闷，最不能容忍的是，好几个月没看博客了 今天我打开一看 发现我发的80篇博客 现在不知道什么原因就剩下60篇了，当时心里一阵mmp飞过。。 于是开始找资料建立自己的博客网站。</p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>在网上找了很多资料，基本都是说workpress建立的，这还需要申请域名，服务器等，主要还主要是对linus和windows系统的，这对我们用mac的就比较尴尬了，然后加上前缀 重点搜mac建站资料，于是就发现mac上可以利用Hexo+Github来搭建自己的博客站，<a href="https://blog.csdn.net/liu_wentao/article/details/70174508" target="_blank" rel="noopener">参看文章</a><br><img src="./1524034594044.png" alt="Alt text"></p>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p><strong>1.   Node.js环境安装</strong><br><a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js 官网地址</a><br>下载node.js 有多种方法：使用brew下载 或 直接下载安装包。 我这里是直接下载安装包的。<br><img src="./1524036063215.png" alt="Alt text"><br>这种就安装成功了。<br>检测安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ClimbdeMacBook-Pro:博客 climbwang$ node -v</span><br><span class="line">v8.11.1</span><br><span class="line">ClimbdeMacBook-Pro:博客 climbwang$ npm -v</span><br><span class="line">5.6.0</span><br></pre></td></tr></table></figure></p>
 <p><strong>2. 安装hexo</strong><br>Git 用来将本地Hexo内容提交到Github上。Xcode自带Git，这里不再赘述。如果没有Xcode可以参考Hexo官网上的安装方法。<br>当Node.js和Git都安装好后，在你准备存博客的地方创建一个文件夹，我是在桌面新建的“博客”文件夹，然后终端执行命令，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd Desktop/博客</span><br><span class="line">$ hexo init</span><br></pre></td></tr></table></figure></p>
 <p>执行如下命令开启hexo服务器:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure></p>
 <p>此时，浏览器中打开网址 <a href="http://localhost:4000，能看到如下页面：![Alt" target="_blank" rel="noopener">http://localhost:4000，能看到如下页面：![Alt</a> text](./1524036729507.png)</p>
@@ -101,7 +101,7 @@
 <p>在hexo文件夹目录下执行生成blog静态页面：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate //可简写为 hexo g</span><br></pre></td></tr></table></figure></p>
 <p>发布<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy //可简写为 hexo d</span><br></pre></td></tr></table></figure></p>
 <p>命令执行成功后，浏览器中打开网址<a href="http://Climb0516.github.io（将Climb6换成你的用户名）能看到和打开http://localhost:4000时一样的页面" target="_blank" rel="noopener">http://Climb0516.github.io（将Climb6换成你的用户名）能看到和打开http://localhost:4000时一样的页面</a>.</p>
-<p>###发布文章<br>终端cd到桌面 ‘博客’ 文件夹下，新建文章：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new &quot;firstBlog&quot;</span><br></pre></td></tr></table></figure></p>
+<h3 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h3><p>终端cd到桌面 ‘博客’ 文件夹下，新建文章：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new &quot;firstBlog&quot;</span><br></pre></td></tr></table></figure></p>
 <p>名为firstBlog.md的文件会建在目录 <strong>/博客/source/_posts </strong>下。你当然可以用vim来编辑文章，也可以用MacDown编辑器来写作markdown，支持预览，我是用<a href="https://maxiang.io/" target="_blank" rel="noopener">马克飞象</a> 也挺好用。</p>
 <p>文章编辑完成后，终端cd到”博客”文件夹下，执行如下命令来发布：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate     //生成静态页面</span><br><span class="line">$ hexo deploy      //将文章部署到Github</span><br></pre></td></tr></table></figure></p>
 <p>至此，Mac上搭建基于Github的Hexo博客就完成了。<br>下面的内容是介绍安装theme。</p>
@@ -109,7 +109,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/18/first-Blog/" data-id="cjg4syqyy000084s6mjloqnjj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/18/first-Blog/" data-id="cjg4t49ae0001ars6cmu9q8gt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -154,7 +154,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/18/hello-world/" data-id="cjg4syqz2000184s6j2r7y1oq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/18/hello-world/" data-id="cjg4t49aa0000ars6bz1xq0kq" class="article-share-link">Share</a>
       
       
     </footer>
